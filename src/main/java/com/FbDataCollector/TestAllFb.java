@@ -7,10 +7,6 @@ import com.restfb.types.Page;
 
 public class TestAllFb {
 	
-	public static void main(String[] args) throws JsonProcessingException {
-		testMyFbMock();
-	}
-	
 	public static void testMyFbMock() throws JsonProcessingException {
 		// MyFbMock - All the data in one object
 		MyFbMock myFbMock = new MyFbMock();
