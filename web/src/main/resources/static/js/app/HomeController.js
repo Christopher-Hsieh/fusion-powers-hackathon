@@ -27,7 +27,7 @@ angular.module('crudApp').controller('HomeController',
     			alert("social media data fetched properly");
     			console.log(response);
     		}, function(error) {
-    			alert("social media data fetched properly");
+    			alert("error in fetching data");
     			
     			console.log(error);
     		});
