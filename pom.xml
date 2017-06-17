@@ -24,7 +24,6 @@
 		<java.version>1.8</java.version>
 		<h2.version>1.4.187</h2.version>
 		<spring.amqp.version>1.4.3.RELEASE</spring.amqp.version>
-		<spring.framework.version>4.1.4.RELEASE</spring.framework.version>
 	</properties>
 
 	<dependencies>

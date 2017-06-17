@@ -1,5 +1,7 @@
 package com.fusionpower.controller
 
+import com.FbDataCollector.MyFbData
+import com.FbDataCollector.SimpleFbApiCall
 import com.fusionpower.crawler.Crawler
 import com.fusionpower.model.UserData
 import edu.uci.ics.crawler4j.crawler.CrawlConfig
@@ -10,6 +12,8 @@ import edu.uci.ics.crawler4j.robotstxt.RobotstxtServer
 import org.springframework.amqp.core.AmqpTemplate
 import org.springframework.amqp.core.Queue
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.http.HttpStatus
+import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
@@ -21,10 +25,19 @@ class CrawlerController {
 
 
     @RequestMapping("/crawl")
-    UserData index(@RequestBody String uriToCrawl) {
-
-        amqpTemplate.convertAndSend(rabbitQueue.getName(), uriToCrawl)
-        buildMockUserData(uriToCrawl)
+    def index(@RequestBody String uriToCrawl) {
+        def url = new URL(uriToCrawl)
+        if ((new URL(uriToCrawl)).host.toLowerCase().contains('facebook')) {
+            SimpleFbApiCall fbApi = new SimpleFbApiCall()
+            MyFbData myFbData = new MyFbData()
+            def company = url.path.split('/')[-1]
+            myFbData.setDataFromPage(fbApi.grabFBPageInfo(company))
+            myFbData.setLocations(fbApi.grabFbPageLocations(company))
+            myFbData
+        } else {
+            amqpTemplate.convertAndSend(rabbitQueue.getName(), uriToCrawl)
+            buildMockUserData(uriToCrawl)
+        }
 
     }
 
