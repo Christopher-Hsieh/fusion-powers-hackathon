@@ -7,7 +7,7 @@
 
 ### Facebook: https://developers.facebook.com/docs/graph-api
 - Only need to make developer account and append token to calls
-- Example call on {page-id}=’cocacola/’
+- Example call on {page-id}=’cocacola/’ => [Example Output](https://github.com/JumpingRock/fusion-powers-hackathon/blob/master/API-info.md#example-coca-cola-output)
 ```
 cocacola?fields=id,about,category_list,company_overview,contact_address,current_location,description,founded,general_info,general_manager,link,name,products,single_line_address,website,global_brand_children{name,about,id},global_brand_page_name,global_brand_root_id,product_catalogs{name,id},fan_count,picture,category,restaurant_services,restaurant_specialties,locations{name,location},milestones{title}
 ```
