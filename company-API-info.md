@@ -5,6 +5,11 @@
 - Looks like we need to be admin of the company to parse its info through LinkedIn’s API: https://stackoverflow.com/questions/30409219/linkedin-api-unable-to-view-any-company-profile
 - Some open source projects (none Java so far) i.e. https://github.com/yatish27/linkedin-scraper can do it
 
+### Glassdoor: [Very simple Api](https://www.glassdoor.com/developer/companiesApiActions.htm)
+- Example of information we can scrape: http://imgur.com/a/fS8EU
+- Note, typical response from Api does not give us too much info. See link in title.
+- Easy to get and use key, uses REST
+
 ### Facebook: https://developers.facebook.com/docs/graph-api
 - Only need to make developer account and append token to calls
 - Test calls here: https://developers.facebook.com/tools/explorer/
