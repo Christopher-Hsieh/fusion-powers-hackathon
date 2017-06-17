@@ -1,8 +1,9 @@
 var app = angular.module('crudApp',['ui.router','ngStorage']);
 
 app.constant('urls', {
-    BASE: 'http://localhost:8080/fusionpower',
-    USER_SERVICE_API : 'http://localhost:8080/fusionpower/api/user/'
+    BASE: 'http://localhost:8080/SpringBootCRUDApp',
+    USER_SERVICE_API : 'http://localhost:8080/SpringBootCRUDApp/api/user/',
+    CRAWL_SERVICE_API : 'https://zt-fusion-powers-heroku.herokuapp.com/fusionpower/crawl'
 });
 
 app.config(['$stateProvider', '$urlRouterProvider',
@@ -10,19 +11,20 @@ app.config(['$stateProvider', '$urlRouterProvider',
 
         $stateProvider
             .state('home', {
-                url: '/',
-                templateUrl: 'partials/list',
-                controller:'UserController',
-                controllerAs:'ctrl',
-                resolve: {
-                    users: function ($q, UserService) {
-                        console.log('Load all users');
-                        var deferred = $q.defer();
-                        UserService.loadAllUsers().then(deferred.resolve, deferred.resolve);
-                        return deferred.promise;
-                    }
-                }
-            });
-        $urlRouterProvider.otherwise('/');
+                url: '/home',
+                templateUrl: 'partials/home',
+                controller:'HomeController'
+            })
+            .state('business', {
+                url: '/business',
+                templateUrl: 'partials/business',
+                controller:'BusinessController'
+            })
+            .state('personal', {
+                url: '/personal',
+                templateUrl: 'partials/personal',
+                controller:'PersonalController'
+            })
+        $urlRouterProvider.otherwise('/home');
     }]);
 
