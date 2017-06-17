@@ -2,8 +2,14 @@ package com.websystique.springboot.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.FbDataCollector.MyFbMock;
+import com.FbDataCollector.SimpleFbApiCallMock;
 
 @RestController
 @RequestMapping("/api")
@@ -14,17 +20,21 @@ public class RestApiController {
 //	@Autowired
 //	UserService userService; //Service which will do all data retrieval/manipulation work
 //
-//	// -------------------Retrieve All Users---------------------------------------------
-//
-//	@RequestMapping(value = "/user/", method = RequestMethod.GET)
-//	public ResponseEntity<List<User>> listAllUsers() {
-//		List<User> users = userService.findAllUsers();
-//		if (users.isEmpty()) {
-//			return new ResponseEntity(HttpStatus.NO_CONTENT);
-//			// You many decide to return HttpStatus.NOT_FOUND
-//		}
-//		return new ResponseEntity<List<User>>(users, HttpStatus.OK);
-//	}
+
+	@RequestMapping(value = "/FbData/", method = RequestMethod.GET)
+	public ResponseEntity<MyFbMock> getFbData() {
+		
+		SimpleFbApiCallMock mock = new SimpleFbApiCallMock();
+		MyFbMock myFbMock = new MyFbMock();
+		
+		myFbMock.setDataFromPage(mock.mockPage());
+		myFbMock.setLocations(mock.mockLocations());
+		myFbMock.setProducts(mock.mockProducts());
+		return new ResponseEntity<MyFbMock>(myFbMock, HttpStatus.OK);
+	}
+	
+	
+	
 //
 //	// -------------------Retrieve Single User------------------------------------------
 //

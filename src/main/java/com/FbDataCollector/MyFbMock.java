@@ -2,24 +2,33 @@ package com.FbDataCollector;
 
 import java.util.ArrayList;
 
+import com.restfb.types.Location;
+import com.restfb.types.Page;
+
 public class MyFbMock {
+	
+	public void setDataFromPage(Page mockPage) {
+		setAbout(mockPage.getAbout());
+		setCategory(mockPage.getCategory());
+		setDescription(mockPage.getDescription());
+		setGeneral_info(mockPage.getGeneralInfo());
+		setLink(mockPage.getLink());
+		setName(mockPage.getName());
+		setWebsite(mockPage.getWebsite());
+		setPictureUrl(mockPage.getPicture().getUrl());
+	}
 	
 	String about = "";
 	String category = "";
-	String category_list = "";
-	String contact_address = "";
-	String current_location = "";
 	String description = "";
 	String general_info = "";
-	String id = "";
 	String link = "";
 	String name = "";
-	String picture = "";
 	String website = "";
+	String picture_url = "";
 	
 	ArrayList<String> products;
-	ArrayList<String> locations;
-	
+	ArrayList<Location> locations;
 	
 	public String getAbout() {
 		return about;
@@ -33,24 +42,6 @@ public class MyFbMock {
 	public void setCategory(String category) {
 		this.category = category;
 	}
-	public String getCategory_list() {
-		return category_list;
-	}
-	public void setCategory_list(String category_list) {
-		this.category_list = category_list;
-	}
-	public String getContact_address() {
-		return contact_address;
-	}
-	public void setContact_address(String contact_address) {
-		this.contact_address = contact_address;
-	}
-	public String getCurrent_location() {
-		return current_location;
-	}
-	public void setCurrent_location(String current_location) {
-		this.current_location = current_location;
-	}
 	public String getDescription() {
 		return description;
 	}
@@ -62,12 +53,6 @@ public class MyFbMock {
 	}
 	public void setGeneral_info(String general_info) {
 		this.general_info = general_info;
-	}
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
 	}
 	public String getLink() {
 		return link;
@@ -81,17 +66,17 @@ public class MyFbMock {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getPicture() {
-		return picture;
-	}
-	public void setPicture(String picture) {
-		this.picture = picture;
-	}
 	public String getWebsite() {
 		return website;
 	}
 	public void setWebsite(String website) {
 		this.website = website;
+	}
+	public String getPictureUrl() {
+		return picture_url;
+	}
+	public void setPictureUrl(String picture_url) {
+		this.picture_url = picture_url;
 	}
 	public ArrayList<String> getProducts() {
 		return products;
@@ -99,11 +84,12 @@ public class MyFbMock {
 	public void setProducts(ArrayList<String> products) {
 		this.products = products;
 	}
-	public ArrayList<String> getLocations() {
+	public ArrayList<Location> getLocations() {
 		return locations;
 	}
-	public void setLocations(ArrayList<String> locations) {
+	public void setLocations(ArrayList<Location> locations) {
 		this.locations = locations;
 	}
+
 	
 }

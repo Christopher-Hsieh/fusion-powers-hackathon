@@ -6,6 +6,29 @@ import com.restfb.types.Location;
 import com.restfb.types.Page;
 
 public class TestAllFb {
+
+	private static final String FIELDS_TO_QUERY = ""
+			+ "about,"
+			+ "category,"
+			+ "contact_address,"
+			+ "current_location,"
+			+ "description,"
+			+ "general_info,"
+			+ "general_manager,"
+			+ "id,"
+			+ "link,"
+			+ "locations{name,location},"
+//			+ "milestones.limit(2),"
+			+ "name,"
+//			+ "picture,"
+//			+ "product_catalogs{name},"
+//			+ "single_line_address,"
+			+ "website";
+	
+	
+	
+	
+	
 	
 	public static void testMyFbMock() throws JsonProcessingException {
 		// MyFbMock - All the data in one object
