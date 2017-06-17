@@ -45,16 +45,13 @@ cocacola?fields=id,about,category_list,company_overview,contact_address,current_
 id
 about
 category_list
-company_overview
 contact_address
 current_location
 description
-founded
 general_info
 general_manager
 link
 name
-products
 single_line_address
 website
 global_brand_children
@@ -69,13 +66,25 @@ product_catalogs
     fan_count
 picture
 category
-restaurant_services
-restaurant_specialties
 locations
     name
     location
 milestones
 
+*Company Specific* 
+company_overview
+founded
+mission
+products
+
+*Restaurant Specific*
+restaurant_services
+restaurant_specialties
+
+*Vehicle Specific*
+built
+features
+mpg
 ```
 #### Example Coca-Cola Output
 ```
