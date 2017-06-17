@@ -7,7 +7,7 @@
 |  Google | industry, locations, services, but has website URL | OAuth 2.0 - will take time |
 | Yahoo | revenue - if company is public | ? |
 | Experian | detailed info of: locations and aquired companies, revenue, employees, years in business | Pay wall + given in PDF |
-| Facebook | [See here]addlink | Easy to use, already have token. Just make REST calls in our App. |
+| Facebook | [See here](https://github.com/JumpingRock/fusion-powers-hackathon/blob/master/company-API-info.md#list-of-all-data-we-can-get-from-a-company-fb-page) | Easy to use, already have token. Just make REST calls in our App. |
 
 ### LinkedIn: https://developer.linkedin.com/docs/fields/company-profile
 - Need to register app and use OAuth 2.0 
