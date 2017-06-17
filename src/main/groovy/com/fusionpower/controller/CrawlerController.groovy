@@ -1,14 +1,12 @@
 package com.fusionpower.controller
 
+import com.fusionpower.crawler.Crawler
 import com.fusionpower.model.UserData
 import edu.uci.ics.crawler4j.crawler.CrawlConfig
 import edu.uci.ics.crawler4j.crawler.CrawlController
 import edu.uci.ics.crawler4j.fetcher.PageFetcher
 import edu.uci.ics.crawler4j.robotstxt.RobotstxtConfig
 import edu.uci.ics.crawler4j.robotstxt.RobotstxtServer
-import fusionpower.webcrawler.crawler.Crawler
-import fusionpower.webcrawler.model.UserData
-import org.apache.http.client.utils.URIBuilder
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
@@ -26,13 +24,12 @@ class CrawlerController {
         config.maxDepthOfCrawling = 1
         config.includeHttpsPages = true
 
-
         /*
          * Instantiate the controller for this crawl.
          */
         PageFetcher pageFetcher = new PageFetcher(config)
         RobotstxtConfig robotstxtConfig = new RobotstxtConfig()
-        RobotstxtServer robotstxtServer = new  RobotstxtServer(robotstxtConfig, pageFetcher)
+        RobotstxtServer robotstxtServer = new RobotstxtServer(robotstxtConfig, pageFetcher)
         CrawlController controller = new CrawlController(config, pageFetcher, robotstxtServer)
 
         /*
