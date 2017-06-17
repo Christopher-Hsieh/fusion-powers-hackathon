@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apache.sis.core:sis-utility:0.6">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.sis.core/sis-utility/0.6/e049cdb56758f3a92b48af0f7741d102a90152/sis-utility-0.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.sis.core/sis-utility/0.6/7358d4fc883b4cc5ad28c3775d9dcf2ce0d26724/sis-utility-0.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

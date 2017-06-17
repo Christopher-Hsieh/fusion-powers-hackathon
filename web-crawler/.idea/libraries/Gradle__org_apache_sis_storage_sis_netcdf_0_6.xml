@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apache.sis.storage:sis-netcdf:0.6">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.sis.storage/sis-netcdf/0.6/c847a664eb707b0663dec4a9257419842a33e903/sis-netcdf-0.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.sis.storage/sis-netcdf/0.6/123725c1b0a0f6dc61f925d447c53e55baa3b1a5/sis-netcdf-0.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

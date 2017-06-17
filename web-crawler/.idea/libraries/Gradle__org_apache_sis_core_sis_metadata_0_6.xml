@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apache.sis.core:sis-metadata:0.6">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.sis.core/sis-metadata/0.6/97cde9b02f2548567a06f3ecd42caa39a94ffaf4/sis-metadata-0.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.sis.core/sis-metadata/0.6/59ee6b94d9f99a745a26d842d5a805a36f54d6f0/sis-metadata-0.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
