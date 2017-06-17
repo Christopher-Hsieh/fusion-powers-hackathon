@@ -42,8 +42,10 @@
 									name="SearchKeyword"
 									id="primaryBusinessTxt" maxlength="50"
 									placeholder="Enter Keywords"
-									required="" validate=""
+									required="" validate="" ng-model="data.keywords"
 									class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength ng-valid-custom">
+									
+									<span style="position:absolute; left:300;top:300">Description of fields</span>
 								
 							</div>
 						</div>
@@ -102,7 +104,7 @@
 								<input type="number"
 									class="form-control input-field-small ng-pristine ng-untouched ng-valid-min ng-valid-max ng-invalid ng-invalid-required ng-valid-pattern"
 									pattern="[0-9]*" id="businessLocation" min="1" max="999"
-									 name="businessLocation"
+									 name="businessLocation" ng-model="data.locations"
 									> 
 							</div>
 						</div>
@@ -121,7 +123,7 @@
 								</div>
 
 								<div class="col-lg-7">
-									<input id="noOfEmployee" type="number" pattern="[0-9]*"
+									<input id="noOfEmployee" type="number" pattern="[0-9]*" ng-model="data.employees"
 										
 										class="form-control input-field-small ng-pristine ng-untouched ng-valid-min ng-valid-max ng-valid-pattern ng-invalid ng-invalid-required"
 										name="NoEmployee" min="1" max="9999" step="1"
@@ -206,7 +208,7 @@
 							<div class="row">
 								<div class="col-lg-10"></div>
 								<div class="col-lg-2 nav-buttons">
-									<button class="btn btn-primary" ng-click="goBusiness()">
+									<button class="btn btn-primary" ng-click="goBusiness()" style="cursor: pointer">
 										Continue</a>
 								</div>
 							</div>
@@ -214,6 +216,8 @@
 					</div>
 				</div>
 			</div>
+			
 			</div>
+			
 		</form>
 	

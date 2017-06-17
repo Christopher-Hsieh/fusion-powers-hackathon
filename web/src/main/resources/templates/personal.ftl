@@ -299,14 +299,10 @@ If you need to edit your zip code, please return to the first screen to update i
 			<div class="form-group inline-input">
 				<div class="row">
 					<div class="col-lg-12 nav-buttons">
-						<input type="button" class="btn btn-default" id="btnPrevId"
-							value="Back" ng-click="cfv.gotoPreviousPage()" tealium-link=""
-							data-dl="{&quot;id&quot;:&quot;back button&quot;,&quot;location&quot;: &quot;contact page&quot;,&quot;type&quot;:&quot;button&quot;,&quot;da_track&quot;:&quot;true&quot;}"
-							waitindicatordirective=""> <input type="button"
-							class="btn btn-primary" id="btnNext" value="Continue"
-							data-dl="{&quot;id&quot;:&quot;continue button&quot;,&quot;location&quot;: &quot;contact page&quot;,&quot;type&quot;:&quot;button&quot;,&quot;da_track&quot;:&quot;true&quot;}"
-							ng-click="setTriggerInsScorInd();  postTlmService();"
-							tealium-link="" wait-indicator-directive="">
+						<input type="button" class="btn btn-default" id="btnPrevId" style="cursor: pointer"
+							value="Back" ng-click="goBusiness()" > <input type="button" style="cursor: pointer"
+							class="btn btn-primary" id="btnNext" value="Submit"
+							ng-click="goFinal()">
 					</div>
 				</div>
 			</div>
