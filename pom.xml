@@ -2,12 +2,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.websystique.springboot</groupId>
-	<artifactId>SpringBootCRUDApplicationExample</artifactId>
+	<groupId>com.fusionpower</groupId>
+	<artifactId>hackathon</artifactId>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
-	<name>SpringBootCRUDApplicationExample</name>
+	<name>Fusion Power Hackathon</name>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -36,6 +36,21 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-freemarker</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.sleepycat</groupId>
+			<artifactId>je</artifactId>
+			<version>5.0.73</version>
+		</dependency>
+		<dependency>
+			<groupId>edu.uci.ics</groupId>
+			<artifactId>crawler4j</artifactId>
+			<version>4.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.groovy</groupId>
+			<artifactId>groovy</artifactId>
+			<version>2.4.11</version>
 		</dependency>
 	</dependencies>
 	<build>
