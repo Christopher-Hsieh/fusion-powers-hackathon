@@ -2,8 +2,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.websystique.springboot</groupId>
-	<artifactId>SpringBootCRUDApplicationExample</artifactId>
+	<groupId>com.fusionpower</groupId>
+	<artifactId>hackathon</artifactId>
 	<version>1.0.0</version>
 	<modules>
 		<module>worker</module>
@@ -12,7 +12,7 @@
 	</modules>
 	<packaging>pom</packaging>
 
-	<name>SpringBootCRUDApplicationExample</name>
+	<name>Fusion Power Hackathon</name>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -103,6 +103,21 @@
 	</dependencies>
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.codehaus.gmavenplus</groupId>
+				<artifactId>gmavenplus-plugin</artifactId>
+				<version>1.5</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>addSources</goal>
+							<goal>addTestSources</goal>
+							<goal>compile</goal>
+							<goal>testCompile</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<groupId>org.codehaus.gmavenplus</groupId>
 				<artifactId>gmavenplus-plugin</artifactId>
