@@ -5,17 +5,18 @@ import java.util.ArrayList;
 import com.restfb.types.Location;
 import com.restfb.types.Page;
 
-public class MyFbMock {
+public class MyFbData {
 	
-	public void setDataFromPage(Page mockPage) {
-		setAbout(mockPage.getAbout());
-		setCategory(mockPage.getCategory());
-		setDescription(mockPage.getDescription());
-		setGeneral_info(mockPage.getGeneralInfo());
-		setLink(mockPage.getLink());
-		setName(mockPage.getName());
-		setWebsite(mockPage.getWebsite());
-		setPictureUrl(mockPage.getPicture().getUrl());
+	public void setDataFromPage(Page page) {
+		setAbout(page.getAbout());
+		setCategory(page.getCategory());
+		setDescription(page.getDescription());
+		setGeneral_info(page.getGeneralInfo());
+		setLink(page.getLink());
+		setName(page.getName());
+		setWebsite(page.getWebsite());
+		setPictureUrl(page.getPicture().getUrl());
+		setProducts(page.getProducts());
 	}
 	
 	String about = "";
@@ -27,7 +28,7 @@ public class MyFbMock {
 	String website = "";
 	String picture_url = "";
 	
-	ArrayList<String> products;
+	String products;
 	ArrayList<Location> locations;
 	
 	public String getAbout() {
@@ -78,10 +79,10 @@ public class MyFbMock {
 	public void setPictureUrl(String picture_url) {
 		this.picture_url = picture_url;
 	}
-	public ArrayList<String> getProducts() {
+	public String getProducts() {
 		return products;
 	}
-	public void setProducts(ArrayList<String> products) {
+	public void setProducts(String products) {
 		this.products = products;
 	}
 	public ArrayList<Location> getLocations() {

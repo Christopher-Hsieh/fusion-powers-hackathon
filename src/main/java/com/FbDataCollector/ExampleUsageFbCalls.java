@@ -5,43 +5,20 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.restfb.types.Location;
 import com.restfb.types.Page;
 
-public class TestAllFb {
+public class ExampleUsageFbCalls {
 
-	private static final String FIELDS_TO_QUERY = ""
-			+ "about,"
-			+ "category,"
-			+ "contact_address,"
-			+ "current_location,"
-			+ "description,"
-			+ "general_info,"
-			+ "general_manager,"
-			+ "id,"
-			+ "link,"
-			+ "locations{name,location},"
-//			+ "milestones.limit(2),"
-			+ "name,"
-//			+ "picture,"
-//			+ "product_catalogs{name},"
-//			+ "single_line_address,"
-			+ "website";
-	
-	
-	
-	
-	
-	
 	public static void testMyFbMock() throws JsonProcessingException {
 		// MyFbMock - All the data in one object
-		MyFbMock myFbMock = new MyFbMock();
+		MyFbData myFbMock = new MyFbData();
 		
 		ObjectMapper mapper = new ObjectMapper();
 		System.out.println("MyFbMock: " + mapper.writeValueAsString(myFbMock));
 	}
 	
-	public static void testApiCall() throws JsonProcessingException {
-		// Real call to api to get info
-		SimpleFbApiCall.grabFBPageInfo("cocacola");
-	}
+//	public void testApiCall()  {
+//		// Real call to api to get info
+//		SimpleFbApiCall.grabFBPageInfo("cocacola");
+//	}
 	
 	public static void testMockApiCall() throws JsonProcessingException {
 		// Mock of Real call

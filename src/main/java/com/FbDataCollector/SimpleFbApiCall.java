@@ -3,23 +3,36 @@ package com.FbDataCollector;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.restfb.DefaultFacebookClient;
+import com.restfb.Facebook;
 import com.restfb.FacebookClient;
 import com.restfb.Parameter;
 import com.restfb.Version;
+import com.restfb.types.Location;
 import com.restfb.types.Page;
 
 public class SimpleFbApiCall {
 
-
-	public static void grabFBPageInfo(String company) {
+	public Page grabFBPageInfo(String company) {
 		FacebookClient facebookClient = new DefaultFacebookClient(MY_ACCESS_TOKEN, Version.LATEST);
-		Page page = facebookClient.fetchObject(company, Page.class, Parameter.with("fields", FIELDS_TO_QUERY));
-		createJsonFile(company, page);
+		return facebookClient.fetchObject(company, Page.class, Parameter.with("fields", FIELDS_TO_QUERY));
 	}
 	
+	public ArrayList<Location> grabFbPageLocations(String company) {
+		FacebookClient facebookClient = new DefaultFacebookClient(MY_ACCESS_TOKEN, Version.LATEST);
+		Page page = facebookClient.fetchObject(company, Page.class, Parameter.with("fields", "location,locations,contact_address,current_location,single_line_address"));
+		
+		ArrayList<Location> locations = new ArrayList<Location>();
+		locations.add(page.getLocation());
+//		locations.add(page.addr);
+		
+		return locations;
+	}
+	
+	@SuppressWarnings("unused")
 	private static void createJsonFile(String company, Page page) {
 		ObjectMapper mapper = new ObjectMapper();
 		
@@ -30,7 +43,7 @@ public class SimpleFbApiCall {
 		}
 	}
 
-	private static final String MY_ACCESS_TOKEN = "EAACEdEose0cBAPXy6sDevJPWwfZAZBRo1ymanTWgWRLaaNGQt6W6Hz0MbevER64I24l2wBSswASer5uZAnjbt8eagbRtBg2uMlbquncHNBHLcZCZA2ZCMxeZAhPCZCCoETxDzQiZA3AvMsSLpZBYBFDByUPsZBKntbIhnJEEKwMinjcZALxZAh7ox3KNNspZCKUZCcIcZBcZD";
+	private static final String MY_ACCESS_TOKEN = "EAACEdEose0cBAOdg9YBCrKkxnviUjKOZBX3CoNIQ6AitBtiZAZBMfwoZCKnUMpZAc078CoV90DmjvEal2vzH9Lsd2xZBZAQpz4AdZAKpujCECX00xwNEP2RQsZAowgg9yRXZBx4GW2MbtNZB93uG95ZBoCgnnkTxaJnnA9bDkdPK4oBirMoTPo7zsfMuf4IlD5txPsoZD";
 	private static final String FIELDS_TO_QUERY = ""
 			+ "about,"
 			+ "category,"
@@ -48,7 +61,8 @@ public class SimpleFbApiCall {
 			+ "locations{name,location},"
 			+ "milestones.limit(2),"
 			+ "name,"
-			+ "picture,"
+			+ "picture," 
+			+ "products,"
 			+ "product_catalogs{name},"
 			+ "single_line_address,"
 			+ "website";
@@ -82,4 +96,8 @@ public class SimpleFbApiCall {
 }
 
 
+class Data {
+	 @Facebook
+	 String data;
 
+}

@@ -15,6 +15,7 @@ public class SimpleFbApiCallMock {
 	String name = "Name of company";
 	String website = "Website of company";
 	String url = "Url to Profile picture";
+	String products = "Products description for company";
 
 	
 	public ArrayList<String> mockProducts() {
@@ -42,6 +43,7 @@ public class SimpleFbApiCallMock {
 		page.setName(name);
 		page.setPicture(createProfilePicture());
 		page.setWebsite(website);
+		page.setProducts(products);
 		return page;
 	}
 	
