@@ -262,9 +262,9 @@
 					<div class="form-group inline-input">
 						<div class="row">
 							<div class="col-lg-12 nav-buttons">
-								<input type="button" class="btn btn-default" id="btnPrev"
-									value="Back" ng-click="goBusiness()" tealium-link=""
-									> <input type="button"
+								<input type="button" class="btn btn-default" id="btnPrev"style="cursor: pointer"
+									value="Back" ng-click="goHome()" tealium-link=""
+									> <input type="button" style="cursor: pointer"
 									class="btn btn-primary" id="btnNext" value="Continue"
 									ng-click="goPersonal()" >
 							</div>
