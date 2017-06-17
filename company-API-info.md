@@ -1,4 +1,13 @@
 # Gathering Company Info from APIs
+#### Summary of below
+| Company | Information Available | Difficult to use |
+| ------- | --------------------- | ---------------- |
+| LinkedIn | industry, number of employees, locations | Have to scrape - might be open source scrapers |
+|  Glassdoor | industry, number employees, location, revenue | Have to scrape |
+|  Google | industry, locations, services, but has website URL | OAuth 2.0 - will take time |
+| Yahoo | revenue - if company is public | ? |
+| Experian | detailed info of: locations and aquired companies, revenue, employees, years in business | Pay wall + given in PDF |
+| Facebook | [See here]addlink | Easy to use, already have token. Just make REST calls in our App. |
 
 ### LinkedIn: https://developer.linkedin.com/docs/fields/company-profile
 - Need to register app and use OAuth 2.0 
@@ -10,6 +19,20 @@
 - Note, typical response from Api does not give us too much info. See link in title.
 - Easy to get and use key, uses REST
 
+### Google: https://developers.google.com/partners/reference/rest/v2/companies
+- Key Responses:
+```
+locations[]	object(Location)	The list of company locations. => i.e. could return all retraunts in the country
+industries[]	enum(Industry)	Industries the company can help with.
+services[]	enum(Service)	Services the company can help with.
+websiteUrl	string	URL of the company's website.
+```
+- Annoying to get key. Think we have to go through OAuth 2.0
+
+### Yahoo & Experian: 
+- Yahoo: https://finance.yahoo.com/quote/GOOG/key-statistics?p=GOOG Only interesting thing is revenue. 
+- [Experian](http://sbcr.experian.com/pdp.aspx?pg=Sample-CreditScoreP&ftr=nolinksCloseButton&hdr=reportPopup&link=5502), lots of info but costs money. Liberty already collects 90million experian records for CI every quarter though.
+
 ### Facebook: https://developers.facebook.com/docs/graph-api
 - Only need to make developer account and append token to calls
 - Test calls here: https://developers.facebook.com/tools/explorer/
@@ -17,7 +40,7 @@
 ```
 cocacola?fields=id,about,category_list,company_overview,contact_address,current_location,description,founded,general_info,general_manager,link,name,products,single_line_address,website,global_brand_children{name,about,id},global_brand_page_name,global_brand_root_id,product_catalogs{name,id},fan_count,picture,category,restaurant_services,restaurant_specialties,locations{name,location},milestones{title}
 ```
-List of all data we can get from a company FB page:
+#### List of all data we can get from a company FB page:
 ```
 id
 about
