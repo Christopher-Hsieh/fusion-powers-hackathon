@@ -20,6 +20,14 @@
 		<h2.version>1.4.187</h2.version>
 	</properties>
 
+	<pluginRepositories>
+		<pluginRepository>
+			<id>codehaus-nexus-snapshots</id>
+			<name>Codehaus.org snapshot repository</name>
+			<url>https://nexus.codehaus.org/content/repositories/snapshots/groovy/</url>
+		</pluginRepository>
+	</pluginRepositories>
+
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/com.restfb/restfb -->
 		<dependency>
@@ -49,8 +57,8 @@
 		</dependency>
 		<dependency>
 			<groupId>org.codehaus.groovy</groupId>
-			<artifactId>groovy</artifactId>
-			<version>2.4.11</version>
+			<artifactId>groovy-all</artifactId>
+			<version>2.3.7</version>
 		</dependency>
 	</dependencies>
 	<build>
@@ -60,6 +68,21 @@
 					commandline using java -jar NAME -->
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.gmavenplus</groupId>
+				<artifactId>gmavenplus-plugin</artifactId>
+				<version>1.5</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>addSources</goal>
+							<goal>addTestSources</goal>
+							<goal>compile</goal>
+							<goal>testCompile</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
