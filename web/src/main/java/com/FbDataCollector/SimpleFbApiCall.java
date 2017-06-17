@@ -43,7 +43,7 @@ public class SimpleFbApiCall {
 		}
 	}
 
-	private static final String MY_ACCESS_TOKEN = "EAACEdEose0cBAOdg9YBCrKkxnviUjKOZBX3CoNIQ6AitBtiZAZBMfwoZCKnUMpZAc078CoV90DmjvEal2vzH9Lsd2xZBZAQpz4AdZAKpujCECX00xwNEP2RQsZAowgg9yRXZBx4GW2MbtNZB93uG95ZBoCgnnkTxaJnnA9bDkdPK4oBirMoTPo7zsfMuf4IlD5txPsoZD";
+	private static final String MY_ACCESS_TOKEN = "EAACEdEose0cBALZCgQ6hgkTQH16GwAo1djbzLL0YZC0dLCRXcHPKWvQmzQXBQYtk7MMDzBJdZAYL3E325kBtrJKE3QMVn6E9wWleyE76xCqC13DLDzadqXd782rnAZCd6415RHxKmZBZArGWaFPVmeV1GATDKJLyn2ZCjQCr7SaIxUCRNZAV1q6HMs2RlpBSMcIZD";
 	private static final String FIELDS_TO_QUERY = ""
 			+ "about,"
 			+ "category,"
